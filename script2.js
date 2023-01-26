@@ -1,6 +1,3 @@
-
-//A lot of practice projects that I did previously had these on the top of the document so I moved them up here for my thinking
-// Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
@@ -26,77 +23,76 @@ var passwordArray = [];
 
 //Is the final output array pushed get's randomized into
 var password = [];
+var characterlength;
+//Had to add these to a global scope since diving it in 2
+var lowercaseAnswer;
+var uppercaseAnswer;
+var specialCharAnswer;
+var numberAnswer;
 
-//prompt gives a textbox underneath, alert makes it pop up right away, confirm just gives ok and cancel options
-function generatePassword (){
-   //Little welcome message telling you how to play the game
+function welcomeGame(){
+  //Little welcome message telling you how to play the game
   confirm('Welcome to password generator, please select ok for yes and cancel for no');
-  
+
+  //prompt gives a textbox underneath, alert makes it pop up right away, confirm just gives ok and cancel options
   //window.promt returns the number that the user put in
   var characterlength = window.prompt('How many characters would you like in your password: Choose a number between 8-128'); 
 
   //makes sure the number is in the limit
   if(characterlength < 8 || characterlength > 128){
     alert('Please select a number between 8 - 128');
-    generatePassword();
+    //returns it to the start and makes it go over the number again
+   welcomeGame();
   }
+  //this checks to see if the character input is a number, without it the generator will give a random input
   if(isNaN(characterlength)){
     alert('no');
-    generatePassword();
+   welcomeGame();
   }
-    
-    //returns it to the start and makes it go over the number again
-    //generatePassword();
-  
-  //These ask if you would like the certain characteristics in your password:
+
+   //These ask if you would like the certain characteristics in your password:
+   //Confirm just gives  a yes or cancel answer
+  var lowercaseAnswer = confirm('Would you like lowercase letters?'); return lowercaseAnswer;
+  var uppercaseAnswer = confirm('Would you like uppercase letters?'); return lowercaseAnswer;
+  var specialCharAnswer = confirm('Would you like special characters?'); return lowercaseAnswer;
+  var numberAnswer = confirm('Would you like numbers?');
+  return numberAnswer;
+  generatePassword();
+}
+
+
+function generatePassword (){
   //Using concact appends the arrays together where as push pushes the arrays as seperate arrays into the one array
-  var lowercaseAnswer = confirm('Would you like lowercase letters?');
   if(lowercaseAnswer == true){
      passwordArray = passwordArray.concat(lowercase);
   }
-
-  var uppercaseAnswer = confirm('Would you like uppercase letters?');
   if(uppercaseAnswer == true){
     passwordArray = passwordArray.concat(uppercase);
   }
-
-  var specialCharAnswer = confirm('Would you like special characters?');
   if(specialCharAnswer == true){
     passwordArray = passwordArray.concat(specialChar);
   }
-  var numberAnswer = confirm('Would you like numbers?');
   if(numberAnswer == true){
     passwordArray = passwordArray.concat(nums);
   }
-
-   //Loops over the characterlength chosen, creates a new array total, and loops over the password array created that is holding all of the options that were pushed
+  
   for(var i = 0; i < characterlength; i++){
     var total = passwordArray[Math.floor(Math.random () * passwordArray.length)];
     console.log(total);
     //total var and push it to the password =[]; array, not passwordArray
     password.push(total);
+    
   }
 
+   //Loops over the characterlength chosen, creates a new array total, and loops over the password array created that is holding all of the options that were pushed
+  
 }
 
-//console.log's I used for checking
-//console.log(characterlength);
-//console.log(generatePassword());
-//console.log(passwordArray);
-//console.log(password);
-//console.log(newArray);
 
-
-
-// Write password to the #password input
-//this is taking in a function I wrote generatePassword(), and then selecting the password selector on the main page, then its assigning the new var holding that selector.value and giving it the password that was generated.
 function writePassword() {
-  generatePassword();
- //var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-  //.join('') = takes away the commas between them
-  passwordText.value = password.join('');
-}
-
-
-
+    welcomeGame();
+   //var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+    //.join('') = takes away the commas between them
+    passwordText.value = password.join('');
+  }
