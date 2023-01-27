@@ -1,3 +1,6 @@
+//Draft Script Do Not Use
+//From here I decided to make new functions and wanted to have my reference copy on hand.
+
 
 //A lot of practice projects that I did previously had these on the top of the document so I moved them up here for my thinking
 // Get references to the #generate element
