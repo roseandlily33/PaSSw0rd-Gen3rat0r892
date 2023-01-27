@@ -30,7 +30,7 @@ var password = [];
 //prompt gives a textbox underneath, alert makes it pop up right away, confirm just gives ok and cancel options
 function generatePassword (){
    //Little welcome message telling you how to play the game
-  confirm('Welcome to password generator, please select ok for yes and cancel for no');
+  confirm('Welcome to password generator, select ok for yes and cancel for no');
   
   //window.promt returns the number that the user put in
   var characterlength = window.prompt('How many characters would you like in your password: Choose a number between 8-128'); 
@@ -41,30 +41,29 @@ function generatePassword (){
     generatePassword();
   }
   if(isNaN(characterlength)){
-    alert('no');
+    alert('Please put in a number that is between 8 - 128');
     generatePassword();
   }
     
-    //returns it to the start and makes it go over the number again
-    //generatePassword();
+    //returns it to the start and makes it go over the number again: generatePassword();
   
   //These ask if you would like the certain characteristics in your password:
   //Using concact appends the arrays together where as push pushes the arrays as seperate arrays into the one array
-  var lowercaseAnswer = confirm('Would you like lowercase letters?');
+  var lowercaseAnswer = confirm('Would you like lowercase letters in your password?');
   if(lowercaseAnswer == true){
      passwordArray = passwordArray.concat(lowercase);
   }
 
-  var uppercaseAnswer = confirm('Would you like uppercase letters?');
+  var uppercaseAnswer = confirm('Would you like uppercase letters in your password?');
   if(uppercaseAnswer == true){
     passwordArray = passwordArray.concat(uppercase);
   }
 
-  var specialCharAnswer = confirm('Would you like special characters?');
+  var specialCharAnswer = confirm('Would you like special characters in your password?');
   if(specialCharAnswer == true){
     passwordArray = passwordArray.concat(specialChar);
   }
-  var numberAnswer = confirm('Would you like numbers?');
+  var numberAnswer = confirm('Would you like numbers in your password?');
   if(numberAnswer == true){
     passwordArray = passwordArray.concat(nums);
   }
