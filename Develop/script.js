@@ -76,9 +76,8 @@ function generatePassword (){
     //total var and push it to the password =[]; array, not passwordArray
     password.push(total);
   }
-
+  
 }
-
 //console.log's I used for checking
 //console.log(characterlength);
 //console.log(generatePassword());
