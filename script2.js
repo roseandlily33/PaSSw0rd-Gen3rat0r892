@@ -30,7 +30,7 @@ function startGame() {
   confirm('Welcome to password generator, please select ok for yes and cancel for no');
 
   //prompt gives a textbox underneath, alert makes it pop up right away, confirm just gives ok and cancel options
-  //window.promt returns the number that the user put in
+  //window.prompt returns the number that the user put in
   characterlength = window.prompt('How many characters would you like in your password: Choose a number between 8-128');
 
   //makes sure the number is in the limit
@@ -61,7 +61,7 @@ function generatePassword() {
   if (lowercaseAnswer == true) {
     passwordArray = passwordArray.concat(lowercase);
   }
-  var uppercaseAnswer = window.confirm('Would you like uppercase letters?');
+  var uppercaseAnswer = window.confirm('Would you like UPPERCASE letters?');
   if (uppercaseAnswer == true) {
     passwordArray = passwordArray.concat(uppercase);
   }
