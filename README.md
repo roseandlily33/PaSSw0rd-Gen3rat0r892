@@ -4,10 +4,12 @@
 The project this week was to make a password generator, it included premade HTML, and CSS, and then you had to do the JavaScript. The goal was to have prompts on the screen and depending on the yes and no's selected to generate a password between 8-128 characters, and must contain at least one of the following: uppercase, lowercase, special characters or numbers.
 
 ## Images:
-Coming soon
+<img width="927" alt="Screenshot 2023-01-29 at 12 13 15 PM" src="https://user-images.githubusercontent.com/109821108/215339584-5e9911a4-dac0-4320-9557-a94d867b8796.png">
+<img width="975" alt="Screenshot 2023-01-29 at 12 13 02 PM" src="https://user-images.githubusercontent.com/109821108/215339588-30414450-8239-44c5-88e9-4f62bd028783.png">
+
 
 ## Live Site URL:
-Coming Soon
+https://roseandlily33.github.io/PaSSw0rd-Gen3rat0r892/
 
 ## Acknowledgements
 I used a lot of youtube tutorials on building projects to be able to do this project including a lot of searching on google for things such as:
